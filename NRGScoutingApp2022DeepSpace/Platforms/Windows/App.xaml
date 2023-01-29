@@ -1,0 +1,8 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="NRGScoutingApp2022DeepSpace.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:NRGScoutingApp2022DeepSpace.WinUI">
+
+</maui:MauiWinUIApplication>

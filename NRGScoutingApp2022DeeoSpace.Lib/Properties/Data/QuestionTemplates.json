@@ -1,0 +1,54 @@
+[
+  {
+    "questionNum": 1,
+    "question": "Hours practiced?"
+  },
+  {
+    "questionNum": 2,
+    "question": "Drive base?"
+  },
+  {
+    "questionNum": 3,
+    "question": "How many hatch panels/cargo do you average per match?"
+  },
+  {
+    "questionNum": 4,
+    "question": "What do you focus on (rocket/cargo ship)?"
+  },
+  {
+    "questionNum": 5,
+    "question": "What level(s) can your bot reach?"
+  },
+  {
+    "questionNum": 6,
+    "question": "All positions in auto for sandstorm?"
+  },
+  {
+    "questionNum": 7,
+    "question": "Auto vs tele for sandstorm?"
+  },
+  {
+    "questionNum": 8,
+    "question": "Can you get to the highest platform in the hab? What is your prefered method in endgame?"
+  },
+  {
+    "questionNum": 9,
+    "question": "Speed?"
+  },
+  {
+    "questionNum": 10,
+    "question": "Mechanism?"
+  },
+  {
+    "questionNum": 11,
+    "question": "Placement?"
+  },
+  {
+    "questionNum": 12,
+    "question": "Anything you noticed about the team?"
+  },
+  {
+    "questionNum": 13,
+    "question": "Other?"
+  }
+]
