@@ -1,4 +1,5 @@
 using NRGScoutingApp2022DeeoSpace.Lib.Data;
+using NRGScoutingApp2022DeeoSpace.Lib.Models;
 using NRGScoutingApp2022DeepSpace.Views.MatchEntryViews;
 
 namespace NRGScoutingApp2022DeepSpace.Views;
@@ -10,8 +11,13 @@ public partial class AllMatchEntriesPage : ContentPage
     public AllMatchEntriesPage()
     {
         InitializeComponent();
+    }
 
-        this.database = new MatchEntryDatabase();
+    public AllMatchEntriesPage(MatchEntryDatabase database)
+    {
+        InitializeComponent();
+
+        this.database = database;
     }
 
     protected async override void OnAppearing()
@@ -29,8 +35,17 @@ public partial class AllMatchEntriesPage : ContentPage
 ;        // await Navigation.PushAsync(new MatchEntryPage());
     }
 
-    private void matchEntryCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void matchEntryCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        if (e.CurrentSelection.Count != 0)
+        {
+            MatchEntry entry = (MatchEntry)e.CurrentSelection[0];
 
+            // Should navigate to "MatchEntryDetail?MatchId=0"
+            await Shell.Current.GoToAsync($"{nameof(MatchEntryDetailPage)}?MatchEntryId={entry.Id}");
+
+            // Unselect the UI
+            this.matchEntryCollection.SelectedItem = null;
+        }
     }
 }

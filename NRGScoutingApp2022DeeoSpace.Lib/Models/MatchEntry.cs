@@ -48,6 +48,6 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
         {
             get;
             set;
-        }
+        } = new List<MatchEvent>();
     }
 }

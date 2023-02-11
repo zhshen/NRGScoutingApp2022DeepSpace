@@ -6,12 +6,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="{StaticResource ToolbarAdd}" />
     </ContentPage.ToolbarItems>
-    <!--<VerticalStackLayout>
-        <Label 
-            Text="Match Entries"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>-->
+  
     <!-- Display notes in a list -->
     <CollectionView x:Name="matchEntryCollection"
                         Margin="20"

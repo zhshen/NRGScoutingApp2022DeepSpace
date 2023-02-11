@@ -48,9 +48,7 @@ namespace NRGScoutingApp2022DeeoSpace.Test
 
             int matchEntryCount = await database.Connection.Table<MatchEntryEntity>().CountAsync();
 
-            List<MatchEntryEntity> entities = await database.GetAllMatchEntriesAsync();
-
-            List<MatchEntry> entries = entities.ToEntries();
+            List<MatchEntry> entries = await database.GetAllMatchEntriesAsync();
 
             Assert.IsTrue(entries.Count > 0);
         }

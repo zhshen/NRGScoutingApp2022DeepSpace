@@ -1,4 +1,5 @@
 ﻿using NRGScoutingApp2022DeeoSpace.Lib.Entities;
+using NRGScoutingApp2022DeeoSpace.Lib.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -46,11 +47,24 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Data
             }
         }
 
-        public async Task<List<MatchEntryEntity>> GetAllMatchEntriesAsync()
+        public async Task<List<MatchEntry>> GetAllMatchEntriesAsync()
         {
             await this.Init();
 
-            return await this.Connection.Table<MatchEntryEntity>().ToListAsync();
+            List< MatchEntryEntity> entities = await this.Connection.Table<MatchEntryEntity>().ToListAsync();
+
+            return entities.ToEntries();
+        }
+
+        public async Task<MatchEntry?> GetMatchEntryByIdAsync(int id)
+        {
+            await this.Init();
+
+            MatchEntryEntity entity = await this.Connection.Table<MatchEntryEntity>()
+                            .Where(e => e.Id == id)
+                            .FirstOrDefaultAsync();
+
+            return entity.ToMatchEntry();
         }
 
         public async Task<MatchEntryDatabase> CreateAllTablesAsync()

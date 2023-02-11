@@ -27,22 +27,6 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Entities
             this.Data = JsonHelper.Serialize(entry);
         }
 
-        public MatchEntry? ToMatchEntry()
-        {
-            MatchEntry? entry = null;
-
-            if (string.IsNullOrEmpty(this.Data) == false)
-            {
-                entry = JsonHelper.Deserialize<MatchEntry>(this.Data);
-
-                if (entry != null)
-                    entry.Id = this.Id;
-            }
-
-            return entry;
-        }
-
-
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 

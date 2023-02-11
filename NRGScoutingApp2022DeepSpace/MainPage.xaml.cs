@@ -8,6 +8,6 @@ public partial class MainPage : TabbedPage
 	{
 		InitializeComponent();
 
-        RoutingHelper.RegisterRoutes();
+        Registers.RegisterRoutes();
     }
 }
