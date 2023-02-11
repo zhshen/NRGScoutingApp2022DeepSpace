@@ -1,0 +1,68 @@
+﻿[
+  {
+    "team": "10",
+    "matchNum": 328,
+    "side": 0,
+    "teamName": "Red Knights",
+    "crossBaseline": false,
+    "autoLvl": 0,
+    "autoOTele": false,
+    "deathType": 0,
+    "climb": false,
+    "climbLvl": 0,
+    "giveAstClimb": false,
+    "giveAstClimbLvl": 0,
+    "needAstClimb": false,
+    "fouls": 0,
+    "yellowCard": false,
+    "redCard": false,
+    "comments": "",
+    "events": [
+      {
+        "time": "00:00:05",
+        "action": 0
+      },
+      {
+        "time": "00:00:08",
+        "action": 1
+      },
+      {
+        "time": "00:01:10",
+        "action": 2
+      }
+    ]
+  },
+  {
+    "team": "1",
+    "matchNum": 328,
+    "side": 1,
+    "teamName": "The Juggernauts",
+    "crossBaseline": false,
+    "autoLvl": 0,
+    "autoOTele": false,
+    "deathType": 0,
+    "climb": false,
+    "climbLvl": 0,
+    "giveAstClimb": false,
+    "giveAstClimbLvl": 0,
+    "needAstClimb": false,
+    "fouls": 0,
+    "yellowCard": false,
+    "redCard": false,
+    "comments": "",
+    "events": [
+      {
+        "time": "00:00:05",
+        "action": 0
+      },
+      {
+        "time": "00:00:08",
+        "action": 1
+      },
+      {
+        "time": "00:01:10",
+        "action": 2
+      }
+    ]
+  }
+]

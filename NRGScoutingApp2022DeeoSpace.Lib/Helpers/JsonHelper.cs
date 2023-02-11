@@ -18,12 +18,12 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Helpers
 
         public static TValue? LoadEmbededData<TValue>(string jsonName)
         {
-            string path = $"NRGScoutingApp2022DeepSpace.Resources.Data.{jsonName}.json";
+            string path = $"NRGScoutingApp2022DeeoSpace.Lib.Properties.Data.{jsonName}.json";
 
             using (Stream? stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(path))
             {
                 if (stream == null)
-                    throw new InvalidOperationException($"Can not get resource fomr '{path}'");
+                    throw new InvalidOperationException($"Can not get resource from '{path}'");
 
                 using (StreamReader reader = new StreamReader(stream))
                 {

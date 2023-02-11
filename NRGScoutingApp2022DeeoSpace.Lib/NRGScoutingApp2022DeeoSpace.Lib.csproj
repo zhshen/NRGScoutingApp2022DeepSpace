@@ -8,15 +8,21 @@
 
   <ItemGroup>
     <None Remove="Properties\Data\ExportSample.json" />
+    <None Remove="Properties\Data\MatchEntrySample.json" />
     <None Remove="Properties\Data\QuestionTemplates.json" />
+    <None Remove="Properties\Data\Teams.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Properties\Data\ExportSample.json" />
+    <EmbeddedResource Include="Properties\Data\MatchEntrySample.json" />
     <EmbeddedResource Include="Properties\Data\QuestionTemplates.json" />
+    <EmbeddedResource Include="Properties\Data\Teams.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="System.Text.Json" Version="7.0.1" />
   </ItemGroup>
 

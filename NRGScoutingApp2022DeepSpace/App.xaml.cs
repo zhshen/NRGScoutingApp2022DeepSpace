@@ -1,15 +1,15 @@
-﻿using NRGScoutingApp2022DeepSpace.Helpers;
+﻿using NRGScoutingApp2022DeeoSpace.Lib.Data;
+using NRGScoutingApp2022DeepSpace.Helpers;
 
 namespace NRGScoutingApp2022DeepSpace;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
 
         MainPage = new AppShell();
-        // MainPage = new MainPage();
 
         RoutingHelper.RegisterRoutes();
     }

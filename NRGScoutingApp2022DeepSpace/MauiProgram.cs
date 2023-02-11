@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using NRGScoutingApp2022DeeoSpace.Lib.Data;
 
 namespace NRGScoutingApp2022DeepSpace;
 
