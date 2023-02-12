@@ -35,7 +35,12 @@ public partial class AllMatchEntriesPage : ContentPage
         if (this.TeamNum >= 0)
             await this.SaveTempMatchEntrAndSwitchMainPageAsync(this.TeamNum);
         else
-            this.matchEntryCollection.ItemsSource = await this.database.GetAllMatchEntriesAsync();
+            await this.BindDataAsync();
+    }
+
+    private async Task BindDataAsync()
+    {
+        this.matchEntryCollection.ItemsSource = await this.database.GetAllMatchEntriesAsync();
     }
 
     private async Task SaveTempMatchEntrAndSwitchMainPageAsync(int teamNum)
@@ -59,7 +64,6 @@ public partial class AllMatchEntriesPage : ContentPage
     private async void Add_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync($"{nameof(TeamSelectorPage)}?Target=..");
-        //App.Current.MainPage = new MatchEntryShell();
     }
 
     private async void matchEntryCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -73,6 +77,25 @@ public partial class AllMatchEntriesPage : ContentPage
 
             // Unselect the UI
             this.matchEntryCollection.SelectedItem = null;
+        }
+    }
+
+    private void Upload_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Download_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private async void DeleteAll_Clicked(object sender, EventArgs e)
+    {
+        if (await this.DisplayAlert("Confirm", "Do you want to delete all matches ? Data CANNOT be recovered.", "YES", "NO"))
+        {
+            await this.database.DeleteAllMatchEntriesAsync();
+            await this.BindDataAsync();
         }
     }
 }

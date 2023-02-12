@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<local:MatchEntryBasePage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NRGScoutingApp2022DeepSpace.Views.MatchEntryViews.MatchInfoPage"
+             xmlns:local="clr-namespace:NRGScoutingApp2022DeepSpace.Views.MatchEntryViews"
              Title="Match Info">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Back" Clicked="Back_Clicked" IconImageSource="{StaticResource ToolbarBack}" />
-    </ContentPage.ToolbarItems>
+    <local:MatchEntryBasePage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="{StaticResource ToolbarSave}" />
+        <ToolbarItem Text="Back" Clicked="OnBackToMainPage" IconImageSource="{StaticResource ToolbarBack}" />
+    </local:MatchEntryBasePage.ToolbarItems>
     <VerticalStackLayout>
-        <Label 
-            Text="Match Info"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid ColumnDefinitions="120,*" ColumnSpacing="16" RowSpacing="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
+            </Grid.RowDefinitions>
+            <Label Text="Team:" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="0" />
+
+            <HorizontalStackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
+                <Label Text="{Binding TeamName}" />
+            </HorizontalStackLayout>
+
+            <Label Text="Match Number:" Grid.Column="0" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" />
+
+            <Editor x:Name="MatchNumEditor"
+                Grid.Column="1"
+                Grid.Row="1"
+                WidthRequest="120"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Placeholder="(Type here)"
+                Text="{Binding MatchNum}" />
+        </Grid>
+
     </VerticalStackLayout>
-</ContentPage>
+</local:MatchEntryBasePage>

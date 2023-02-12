@@ -1,20 +1,23 @@
 using NRGScoutingApp2022DeeoSpace.Lib.Data;
+using NRGScoutingApp2022DeepSpace.Properties;
 
 namespace NRGScoutingApp2022DeepSpace.Views.MatchEntryViews;
 
-public partial class MatchInfoPage : ContentPage
+public partial class MatchInfoPage : MatchEntryBasePage
 {
-    private MatchEntryDatabase database;
-
     public MatchInfoPage(MatchEntryDatabase database)
+        : base(database)
     {
         InitializeComponent();
-
-        this.database = database;
     }
 
-    private void Back_Clicked(object sender, EventArgs e)
+    private async void Save_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new AppShell();
+        if (this.CurrentEntry != null)
+        {
+            await this.Database.SaveMatchEntry(this.CurrentEntry);
+
+            await this.DisplayAlert("Notice", AppResource.MatchEntrySaved, "OK");
+        }
     }
 }

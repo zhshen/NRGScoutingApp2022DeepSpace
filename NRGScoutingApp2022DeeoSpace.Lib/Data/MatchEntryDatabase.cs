@@ -73,6 +73,26 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Data
             return result;
         }
 
+        public async Task SaveMatchEntry(MatchEntry entry)
+        {
+            MatchEntryEntity entity = new MatchEntryEntity(entry);
+
+            if (entity.Id == 0)
+            {
+                await this.Connection.InsertAsync(entity);
+                entry.Id = entity.Id;
+            }
+            else
+            {
+                await this.Connection.UpdateAsync(entity);
+            }
+        }
+
+        public async Task DeleteAllMatchEntriesAsync()
+        {
+            await this.Connection.DeleteAllAsync<MatchEntryEntity>();
+        }
+
         public async Task<List<Team>> GetTeamsAsync(string criteria = "")
         {
             await this.Init();
@@ -89,7 +109,7 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Data
                             .FirstOrDefaultAsync();
         }
 
-        public async Task<T?> GetAppTempData<T>(string key)
+        public async Task<T?> GetAppTempDataAsync<T>(string key)
         {
             await this.Init();
 
@@ -121,7 +141,9 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Data
             await this.Connection.CreateTableAsync<Team>();
             await this.Connection.CreateTableAsync<AppTempData>();
             await this.Connection.CreateTableAsync<MatchEntryEntity>();
-            await this.Connection.CreateIndexAsync("MatchEntryEntity", new string[] { "TeamNum", "MatchNum", "Side" }, true);
+
+            // Remove the constraint of table MatchEntryEntity
+            // await this.Connection.CreateIndexAsync("MatchEntryEntity", new string[] { "TeamNum", "MatchNum", "Side" }, true);
 
             return this;
         }

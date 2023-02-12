@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <!-- https://fontawesome.com.cn/v4/cheatsheet-->
     <FontImage x:Key="ToolbarAdd"
                FontFamily="FontAwesome"
                Size="22"
@@ -15,7 +16,37 @@
                Size="22"
                Color="White"
                Glyph="&#xf060;"/>
-    
+
+    <FontImage x:Key="ToolbarSave"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="White"
+               Glyph="&#xf0c7;"/>
+
+    <FontImage x:Key="ToolbarDownload"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="White"
+               Glyph="&#xf019;"/>
+
+    <FontImage x:Key="ToolbarUpload"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="White"
+               Glyph="&#xf093;"/>
+
+    <FontImage x:Key="ToolbarTrash"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="White"
+               Glyph="&#xf1f8;"/>
+
+    <FontImage x:Key="ToolbarSearch"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="White"
+               Glyph="&#xf002;"/>
+
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>

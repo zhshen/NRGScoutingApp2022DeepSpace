@@ -2,19 +2,11 @@ using NRGScoutingApp2022DeeoSpace.Lib.Data;
 
 namespace NRGScoutingApp2022DeepSpace.Views.MatchEntryViews;
 
-public partial class MatchTimerPage : ContentPage
+public partial class MatchTimerPage : MatchEntryBasePage
 {
-    private MatchEntryDatabase database;
-
     public MatchTimerPage(MatchEntryDatabase database)
+        : base(database)
     {
         InitializeComponent();
-
-        this.database = database;
-    }
-
-    private void Back_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new AppShell();
     }
 }

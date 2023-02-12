@@ -5,6 +5,9 @@
              Title="Match Entries">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="{StaticResource ToolbarAdd}" />
+        <ToolbarItem Text="Upload..." Clicked="Upload_Clicked" IconImageSource="{StaticResource ToolbarUpload}" />
+        <ToolbarItem Text="Download..." Clicked="Download_Clicked" IconImageSource="{StaticResource ToolbarDownload}" />
+        <ToolbarItem Text="Delete All..." Clicked="DeleteAll_Clicked" IconImageSource="{StaticResource ToolbarTrash}" />
     </ContentPage.ToolbarItems>
   
     <CollectionView x:Name="matchEntryCollection"
