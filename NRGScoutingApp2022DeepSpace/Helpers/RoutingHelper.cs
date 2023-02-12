@@ -8,6 +8,7 @@ namespace NRGScoutingApp2022DeepSpace.Helpers
         public static void RegisterRoutes()
         {
             Routing.RegisterRoute(nameof(Views.MatchEntryDetailPage), typeof(Views.MatchEntryDetailPage));
+            Routing.RegisterRoute(nameof(Views.TeamSelectorPage), typeof(Views.TeamSelectorPage));
 
             Routing.RegisterRoute(nameof(Views.MatchEntryViews.MatchTimerPage), typeof(Views.MatchEntryViews.MatchTimerPage));
             Routing.RegisterRoute(nameof(Views.MatchEntryViews.MatchEventsPage), typeof(Views.MatchEntryViews.MatchEventsPage));
@@ -20,8 +21,12 @@ namespace NRGScoutingApp2022DeepSpace.Helpers
             {
                 builder.Services
                     .AddSingleton<MatchEntryDatabase>()
-                    .AddSingleton<AllMatchEntriesPage>()
-                    .AddTransient<MatchEntryDetailPage>();
+                    .AddTransient<AllMatchEntriesPage>()
+                    .AddTransient<MatchEntryDetailPage>()
+                    .AddTransient<TeamSelectorPage>()
+                    .AddTransient<Views.MatchEntryViews.MatchTimerPage>()
+                    .AddTransient<Views.MatchEntryViews.MatchEventsPage>()
+                    .AddTransient<Views.MatchEntryViews.MatchInfoPage>();
             }
         }
     }

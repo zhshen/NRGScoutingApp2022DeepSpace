@@ -1,9 +1,11 @@
 using NRGScoutingApp2022DeeoSpace.Lib.Data;
+using NRGScoutingApp2022DeeoSpace.Lib.Entities;
+using NRGScoutingApp2022DeeoSpace.Lib.Helpers;
 using NRGScoutingApp2022DeeoSpace.Lib.Models;
-using NRGScoutingApp2022DeepSpace.Views.MatchEntryViews;
 
 namespace NRGScoutingApp2022DeepSpace.Views;
 
+[QueryProperty(nameof(TeamNum), nameof(TeamNum))]
 public partial class AllMatchEntriesPage : ContentPage
 {
     private MatchEntryDatabase database;
@@ -20,19 +22,44 @@ public partial class AllMatchEntriesPage : ContentPage
         this.database = database;
     }
 
+    public int TeamNum
+    {
+        get;
+        set;
+    } = -1;
+
     protected async override void OnAppearing()
     {
         base.OnAppearing();
 
-        this.matchEntryCollection.ItemsSource = await this.database.GetAllMatchEntriesAsync();
+        if (this.TeamNum >= 0)
+            await this.SaveTempMatchEntrAndSwitchMainPageAsync(this.TeamNum);
+        else
+            this.matchEntryCollection.ItemsSource = await this.database.GetAllMatchEntriesAsync();
     }
 
-    private void Add_Clicked(object sender, EventArgs e)
+    private async Task SaveTempMatchEntrAndSwitchMainPageAsync(int teamNum)
     {
+        Team team = await this.database.GetTeamByNumAsync(teamNum);
 
-        // await Shell.Current.GoToAsync($"{nameof(Views.MatchEntryViews.MatchTimerPage)}");
-        App.Current.MainPage = new MatchEntryShell();
-;        // await Navigation.PushAsync(new MatchEntryPage());
+        if (team != null)
+        {
+            MatchEntry entry = new MatchEntry()
+            {
+                TeamNum = teamNum,
+                TeamName = team.TeamName
+            };
+
+            await this.database.SaveAppTempData(MatchConstants.TempMatchEntryKey, entry);
+
+            App.Current.MainPage = new MatchEntryShell();
+        }
+    }
+
+    private async void Add_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"{nameof(TeamSelectorPage)}?Target=..");
+        //App.Current.MainPage = new MatchEntryShell();
     }
 
     private async void matchEntryCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)

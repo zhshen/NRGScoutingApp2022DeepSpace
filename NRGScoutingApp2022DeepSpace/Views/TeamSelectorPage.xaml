@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NRGScoutingApp2022DeepSpace.Views.TeamSelectorPage"
+             Title="Pick a team">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Clicked="Back_Clicked" IconImageSource="{StaticResource ToolbarBack}" />
+    </ContentPage.ToolbarItems>
+  
+    <CollectionView x:Name="teamCollection"
+                        Margin="20"
+                        SelectionMode="Single"
+                        SelectionChanged="teamCollection_SelectionChanged">
+
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding TeamNum}" FontSize="22" />
+                        <Label Text="{Binding TeamName, StringFormat=' - {0}'}" FontSize="22" />
+                    </HorizontalStackLayout>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

@@ -7,18 +7,15 @@
         <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="{StaticResource ToolbarAdd}" />
     </ContentPage.ToolbarItems>
   
-    <!-- Display notes in a list -->
     <CollectionView x:Name="matchEntryCollection"
                         Margin="20"
                         SelectionMode="Single"
                         SelectionChanged="matchEntryCollection_SelectionChanged">
 
-        <!-- Designate how the collection of items are laid out -->
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
         </CollectionView.ItemsLayout>
 
-        <!-- Define the appearance of each item in the list -->
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
