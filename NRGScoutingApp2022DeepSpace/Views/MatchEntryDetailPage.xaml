@@ -5,6 +5,7 @@
              Title="Match Entry Detail">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Back" Clicked="Back_Clicked" IconImageSource="{StaticResource ToolbarBack}" />
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="{StaticResource ToolbarTrash}" />
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         <Label 
