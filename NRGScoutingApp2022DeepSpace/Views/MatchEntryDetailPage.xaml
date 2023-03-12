@@ -5,12 +5,15 @@
              Title="Match Entry Detail">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Back" Clicked="Back_Clicked" IconImageSource="{StaticResource ToolbarBack}" />
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="{StaticResource ToolbarTrash}" />
     </ContentPage.ToolbarItems>
-    <VerticalStackLayout>
-        <Label 
-            x:Name="entryData"
-            Text="No content"
-            VerticalOptions="FillAndExpand" 
-            HorizontalOptions="FillAndExpand" />
-    </VerticalStackLayout>
+    <ScrollView Margin="10">
+         <VerticalStackLayout>
+                <Label 
+                x:Name="entryData"
+                Text="No content"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

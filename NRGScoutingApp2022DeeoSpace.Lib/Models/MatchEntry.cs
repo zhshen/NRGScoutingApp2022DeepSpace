@@ -18,29 +18,84 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
 
         public string TeamName { get; set; } = string.Empty;
 
-        public bool CrossBaseline { get; set; }
+        public bool Leavecomm { get; set; }
 
-        public int AutoLvl { get; set; }
+        /*
+         *GRIDS
+         *l = low grids, m = mid grids, h = high grids
+         *0 = none, 1 = auto + Cube, 2 = teleop + Cube, 3 = auto + Cone, 4 = auto + Cube
+         */
 
-        public bool AutoOTele { get; set; } //False is auto, true is tele
+        public int L1 { get; set; }
+
+        public int L2 { get; set; }
+
+        public int L3 { get; set; }
+
+        public int L4 { get; set; }
+
+        public int L5 { get; set; }
+
+        public int L6 { get; set; }
+
+        public int L7 { get; set; }
+
+        public int L8 { get; set; }
+
+        public int L9 { get; set; }
+
+        public int M1 { get; set; }
+
+        public int M2 { get; set; }
+
+        public int M3 { get; set; }
+
+        public int M4 { get; set; }
+
+        public int M5 { get; set; }
+
+        public int M6 { get; set; }
+
+        public int M7 { get; set; }
+
+        public int M8 { get; set; }
+
+        public int M9 { get; set; }
+
+        public int H1 { get; set; }
+
+        public int H2 { get; set; }
+
+        public int H3 { get; set; }
+
+        public int H4 { get; set; }
+
+        public int H5 { get; set; }
+
+        public int H6 { get; set; }
+
+        public int H7 { get; set; }
+
+        public int H8 { get; set; }
+
+        public int H9 { get; set; }
+
+        /*
+         * CHARGESTATION
+         * 0 = none, 1 = docked, 2 = engaged
+         */
+        public int ChargeStationAuto { get; set; }
+
+        public int ChargeStationTeleop { get; set; }
 
         public DeathType DeathType { get; set; } //0 is no death, 1 is partial death, 2 full death
 
-        public bool Climb { get; set; }
-
-        public int ClimbLvl { get; set; }
-
-        public bool GiveAstClimb { get; set; }
-
-        public int GiveAstClimbLvl { get; set; }
-
-        public bool NeedAstClimb { get; set; }
-
         public int Fouls { get; set; }
 
-        public bool YellowCard { get; set; }
+        // 0 = offense, 1 = defense
+        public int Style { get; set; }
 
-        public bool RedCard { get; set; }
+        public String Substation { get; set; } = string.Empty;
 
         public String Comments { get; set; } = string.Empty;
 

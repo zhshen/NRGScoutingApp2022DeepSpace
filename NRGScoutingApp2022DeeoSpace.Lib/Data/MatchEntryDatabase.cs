@@ -93,6 +93,11 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Data
             await this.Connection.DeleteAllAsync<MatchEntryEntity>();
         }
 
+        public async Task DeleteMatchEntriesAsync(int id)
+        {
+            await this.Connection.DeleteAsync<MatchEntryEntity>(id);
+        }
+
         public async Task<List<Team>> GetTeamsAsync(string criteria = "")
         {
             await this.Init();

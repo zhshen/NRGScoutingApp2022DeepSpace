@@ -37,4 +37,12 @@ public partial class MatchEntryDetailPage : ContentPage
 		await Shell.Current.GoToAsync("..");
 
     }
+    private async void Delete_Clicked(object sender, EventArgs e)
+    {
+        if (await this.DisplayAlert("Confirm","Do you want to delete this entry ? Data CANNOT be recovered.", "YES", "NO"))
+        {
+            await this.database.DeleteMatchEntriesAsync(this.MatchEntryId);
+            await Shell.Current.GoToAsync("..");
+        }
+    }
 }

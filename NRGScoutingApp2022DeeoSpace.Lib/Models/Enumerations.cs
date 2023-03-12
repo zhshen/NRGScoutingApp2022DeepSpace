@@ -16,46 +16,42 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
     public enum ActionType
     {
         /// <summary>
-        /// Drop None
+        /// PickupCube
         /// </summary>
-        DropNone,
+        PickupCube,
 
         /// <summary>
-        /// Rocket lvl 1
+        /// PickupCone
         /// </summary>
-        Drop1,
+        PickupCone,
 
         /// <summary>
-        /// Rocket lvl 2
+        /// ScoreHigh
         /// </summary>
-        Drop2,
+        ScoreHigh,
 
         /// <summary>
-        /// Rocket lvl 3
+        /// ScoreMid
         /// </summary>
-        Drop3,
+        ScoreMid,
 
         /// <summary>
-        /// Cargo Ship
+        /// ScoreLow
         /// </summary>
-        Drop4,
+        ScoreLow,
 
         /// <summary>
-        /// Picked Hatch Panel
+        /// Docked
         /// </summary>
-        Pick1,
+        Docked,
 
         /// <summary>
-        /// Picked Cargo
+        /// Engaged
         /// </summary>
-        Pick2,
-
-        /// <summary>
-        /// Start Climb
-        /// </summary>
-        StartClimb
+        Engaged,
     }
 
+    /*
     public enum ChooseRankType
     {
         /// <summary>
@@ -98,6 +94,7 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
         /// </summary>
         Climb
     }
+    */
 
     public enum MatchSidesType
     {
