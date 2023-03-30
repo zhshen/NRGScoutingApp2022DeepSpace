@@ -51,50 +51,38 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
         Engaged,
     }
 
-    /*
-    public enum ChooseRankType
+    
+    public enum GridPosition
     {
-        /// <summary>
-        /// Overall Team Rank
-        /// </summary>
-        OverallRank,
-
-        /// <summary>
-        /// Lvl1
-        /// </summary>
-        Drop1,
-
-        /// <summary>
-        /// Lvl2
-        /// </summary>
-        Drop2,
-
-        /// <summary>
-        /// Lvl3
-        /// </summary>
-        Drop3,
-
-        /// <summary>
-        /// Ship
-        /// </summary>
-        Drop4,
-
-        /// <summary>
-        /// Hatch
-        /// </summary>
-        Pick1,
-
-        /// <summary>
-        /// Cargo
-        /// </summary>
-        Pick2,
-
-        /// <summary>
-        /// Climb
-        /// </summary>
-        Climb
+        L1,
+        L2,
+        L3,
+        L4,
+        L5,
+        L6,
+        L7,
+        L8,
+        L9,
+        M1,
+        M2,
+        M3,
+        M4,
+        M5,
+        M6,
+        M7,
+        M8,
+        M9,
+        H1,
+        H2,
+        H3,
+        H4,
+        H5,
+        H6,
+        H7,
+        H8,
+        H9,
     }
-    */
+    
 
     public enum MatchSidesType
     {

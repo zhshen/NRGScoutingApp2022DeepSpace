@@ -21,64 +21,16 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
         public bool Leavecomm { get; set; }
 
         /*
-         *GRIDS
-         *l = low grids, m = mid grids, h = high grids
-         *0 = none, 1 = auto + Cube, 2 = teleop + Cube, 3 = auto + Cone, 4 = auto + Cube
+         *Grid
+         *String TimePeriod
+         *String GamePieceType
          */
 
-        public int L1 { get; set; }
-
-        public int L2 { get; set; }
-
-        public int L3 { get; set; }
-
-        public int L4 { get; set; }
-
-        public int L5 { get; set; }
-
-        public int L6 { get; set; }
-
-        public int L7 { get; set; }
-
-        public int L8 { get; set; }
-
-        public int L9 { get; set; }
-
-        public int M1 { get; set; }
-
-        public int M2 { get; set; }
-
-        public int M3 { get; set; }
-
-        public int M4 { get; set; }
-
-        public int M5 { get; set; }
-
-        public int M6 { get; set; }
-
-        public int M7 { get; set; }
-
-        public int M8 { get; set; }
-
-        public int M9 { get; set; }
-
-        public int H1 { get; set; }
-
-        public int H2 { get; set; }
-
-        public int H3 { get; set; }
-
-        public int H4 { get; set; }
-
-        public int H5 { get; set; }
-
-        public int H6 { get; set; }
-
-        public int H7 { get; set; }
-
-        public int H8 { get; set; }
-
-        public int H9 { get; set; }
+        public List<GridScoring>? Grids
+        {
+            get;
+            set;
+        } = new List<GridScoring>();
 
         /*
          * CHARGESTATION
@@ -93,12 +45,17 @@ namespace NRGScoutingApp2022DeeoSpace.Lib.Models
         public int Fouls { get; set; }
 
         // 0 = offense, 1 = defense
-        public int Style { get; set; }
+        public String Style { get; set; } = string.Empty;
 
         public String Substation { get; set; } = string.Empty;
 
         public String Comments { get; set; } = string.Empty;
 
+        /*
+         *MatchEvent
+         *TimeSpan Time
+         *ActionType Action
+         */
         public List<MatchEvent>? Events
         {
             get;

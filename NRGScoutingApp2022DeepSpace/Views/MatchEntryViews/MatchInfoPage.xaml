@@ -9,27 +9,54 @@
         <ToolbarItem Text="Back" Clicked="OnBackToMainPage" IconImageSource="{StaticResource ToolbarBack}" />
     </local:MatchEntryBasePage.ToolbarItems>
     <VerticalStackLayout>
-        <Grid ColumnDefinitions="120,*" ColumnSpacing="16" RowSpacing="4">
+        <Grid ColumnDefinitions="120,*" ColumnSpacing="16" RowSpacing="6">
             <Grid.RowDefinitions>
                 <RowDefinition Height="32" />
                 <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
             </Grid.RowDefinitions>
-            <Label Text="Team:" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="0" />
 
+            <Label Text="Team:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End" />
             <HorizontalStackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
                 <Label Text="{Binding TeamName}" />
             </HorizontalStackLayout>
 
-            <Label Text="Match Number:" Grid.Column="0" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" />
+            <Label Text="Team Number:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="End" />
+            <HorizontalStackLayout Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
+                <Label Text="{Binding TeamNum}" />
+            </HorizontalStackLayout>
 
+            <Label Text="Match Number:" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="End" />
             <Editor x:Name="MatchNumEditor"
                 Grid.Column="1"
-                Grid.Row="1"
+                Grid.Row="2"
                 WidthRequest="120"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
                 Placeholder="(Type here)"
                 Text="{Binding MatchNum}" />
+
+            <Label Text="Style:" Grid.Column="0" Grid.Row="3" VerticalOptions="Center" HorizontalOptions="End" />
+            <Editor x:Name="StyleEditor"
+                Grid.Column="1"
+                Grid.Row="3"
+                WidthRequest="120"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Placeholder="(Type here)"
+                Text="{Binding Style}" />
+
+            <Label Text="Comments:" Grid.Column="0" Grid.Row="4" VerticalOptions="Center" HorizontalOptions="End" />
+            <Editor x:Name="CommentsEditor"
+                Grid.Column="1"
+                Grid.Row="4"
+                WidthRequest="240"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Placeholder="(Type here)"
+                Text="{Binding Comments}" />
         </Grid>
 
     </VerticalStackLayout>
