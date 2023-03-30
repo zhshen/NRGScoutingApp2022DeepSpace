@@ -26,7 +26,7 @@
     "chargeStationTeleop": 0,
     "deathType": 0,
     "fouls": 0,
-    "style": 0,
+    "style": "offense",
     "substation": "Double",
     "comments": "",
     "events": [
@@ -81,7 +81,7 @@
     "chargeStationTeleop": 0,
     "deathType": 0,
     "fouls": 0,
-    "style": 0,
+    "style": "offense",
     "substation": "Double",
     "comments": "",
     "events": [

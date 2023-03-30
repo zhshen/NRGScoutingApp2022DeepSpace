@@ -52,7 +52,7 @@
             <Editor x:Name="CommentsEditor"
                 Grid.Column="1"
                 Grid.Row="4"
-                WidthRequest="240"
+                WidthRequest="120"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
                 Placeholder="(Type here)"
